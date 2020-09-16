@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const app = express();
 
+//Connection information is set up.
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -9,6 +10,7 @@ const connection = mysql.createConnection({
     database: 'burgers_db'
 });
 
+// This established the connection between the database
 connection.connect(function (error) {
     if (error) {
         console.log('Error with the connection!');
@@ -18,6 +20,7 @@ connection.connect(function (error) {
     afterConnection();
 });
 
+
 function afterConnection() {
     connection.query("SELECT * FROM burgers", function (err, res) {
         if (err) throw err;
@@ -25,14 +28,7 @@ function afterConnection() {
         connection.end();
     });
 }
-// app.get('/', function (req, resp) {
-//     connection.query("SELECT * FROM burger_db", function (error, rows, fields) {
-//         if (error) {
-//             console.log("Error with the query!")
-//         } else {
-//             console.log("Successful Query");
-//         }
-//     });
-// });
 
-app.listen(8080);
+// Export connection
+module.exports = connection;
+
