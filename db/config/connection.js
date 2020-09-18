@@ -3,6 +3,8 @@ const mysql = require("mysql");
 const app = express();
 
 //Connection information is set up.
+//Keeping the connection in a seperate module allows it to be required by all other files
+
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
