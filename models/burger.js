@@ -15,14 +15,14 @@ const burger = {
     },
 
     //Burger is used as a first arg to reference the *req.params.id*
-    update: function (burger, devoured, cb) {
-        orm.update("burgers", burger, devoured, function (res) {
+    update: function (burger_name, devoured, cb) {
+        orm.update("burgers", burger_name, devoured, function (res) {
             cb(res);
         });
     },
 
-    delete: function (burger, cb) {
-        orm.delete("burger", burger, function (res) {
+    delete: function (burger_name, cb) {
+        orm.delete("burger", burger_name, function (res) {
             cb(res);
         });
     }

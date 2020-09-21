@@ -13,7 +13,7 @@ const orm = {
         })
     },
     // This creates a new burger
-    createNew: function (table, burger_name, devoured cb) {
+    createNew: function (table, burger_name, devoured, cb) {
         var queryString = "INSERT INTO " + table;
 
         queryString += "VALUES (";
