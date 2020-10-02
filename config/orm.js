@@ -1,5 +1,5 @@
 //Keeping the connection in a seperate module allows it to be required by all other files
-const connection = require('connection.js');
+const connection = require('../config/connection.js');
 
 const orm = {
     //This function will pull up all the burgers
