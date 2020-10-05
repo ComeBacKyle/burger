@@ -23,4 +23,21 @@
             <div><strong>Fresh Off the Grill</strong></div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-heading"><strong>Waiting to be Eaten</strong>
+                <p>Click The Button to Eat</p>
+            </div>
+            <div>
+
+                <ul class="eaten burger">
+                    {{#each burger}}
+                    {{#unless devoured}}
+
+                    <span><strong>{{this.burger_name}}</strong></span>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
